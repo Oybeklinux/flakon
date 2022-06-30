@@ -26,13 +26,12 @@ class OrderFilter(FilterSet):
 class BottleViewSet(viewsets.ModelViewSet):
     parser_classes = (JSONParser, FormParser, MultiPartParser)
     permission_classes = [IsAuthenticatedOrReadOnly]
-
     queryset = Bottles.objects.all().order_by('id')
     serializer_class = BottleSerializer
-    pagination_class = None
+    pagination_class = PageNumberPagination
 
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
-    filterset_fields = ['category']
+    filterset_fields = ['category', 'field']
     # @ -fts PostgreSQL o'rnatgandan keyin ishlatilsin
     search_fields = ['^name']
     ordering_fields = ['name', 'price', 'width', 'height']

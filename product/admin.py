@@ -23,3 +23,5 @@ admin.site.register(Category, CategoryAdmin)
 admin.site.register(Settings, SettingsAdmin)
 admin.site.register(Order, OrderAdmin)
 # Register your models here.
+admin.site.register(Images)
+admin.site.register(FieldCategory)
