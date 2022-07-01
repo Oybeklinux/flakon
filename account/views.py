@@ -168,8 +168,9 @@ def register_user(request):
         "is_admin": user.is_staff
     })
 
+
 @api_view(['POST'])
-def send_sms_to_login(request):
+def send_sms(request):
     data = request.data
     phone = request.data.get('phone_number')
 

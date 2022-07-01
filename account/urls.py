@@ -5,7 +5,8 @@ from .views import *
 
 urlpatterns = [
     # path('send_otp/', send_otp),
-    path('send_sms/', send_sms_to_login),
+    # path('send_sms/', send_sms_to_login),
+    path('send/', send_sms),
     path('login/', login_user),
     path('logout/', logout_user),
     path('register/', register_user),
