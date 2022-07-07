@@ -85,7 +85,9 @@ def login_user(request):
             'status': 200,
             'user_id': user.id,
             'token': token,
-            "is_admin": user.is_staff
+            "is_admin": user.is_staff,
+            "phone": phone,
+            "user_name": user.first_name,
         })
     else:
         raise Response({
@@ -165,7 +167,9 @@ def register_user(request):
         'message': 'SMS yuborildi',
         'user_id': user.id,
         'sms': sms,
-        "is_admin": user.is_staff
+        "is_admin": user.is_staff,
+        "phone": phone,
+        "user_name": full_name
     })
 
 
